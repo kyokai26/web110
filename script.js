@@ -1,3 +1,10 @@
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('active');
+}
+
+document.getElementById('close-btn').addEventListener('click', toggleSidebar);
+
+
 function hamburg() {
   const navbar = document.querySelector(".dropdown");
   navbar.style.transform = "translateY(0px)";

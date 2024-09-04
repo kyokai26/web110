@@ -24,56 +24,40 @@
   <body>
     <section class="About" id="about">
       <nav>
+        <div class="breadcrumb-container" onclick="toggleSidebar()">
+          <i class="fas fa-bars"></i> Menu
+        </div>
         <div class="nav-container">
           <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
             Pearl <span>Janette</span>
           </div>
           <div class="links">
-            <div
-              class="link"
-              data-aos="fade-up"
-              data-aos-duration="1500"
-              data-aos-delay="100"
-            >
+            <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
               <a href="index.html">Home</a>
             </div>
-            <div
-              class="link"
-              data-aos="fade-up"
-              data-aos-duration="1500"
-              data-aos-delay="200"
-            >
+            <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
               <a href="About.html">About</a>
             </div>
-            <div
-              class="link"
-              data-aos="fade-up"
-              data-aos-duration="1500"
-              data-aos-delay="300"
-            >
+            <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
               <a href="Portfolio.html">Portfolio</a>
             </div>
-            <div
-              class="link"
-              data-aos="fade-up"
-              data-aos-duration="1500"
-              data-aos-delay="500"
-            >
+            <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
               <a href="Contact.html">Contact</a>
             </div>
           </div>
-          <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-        </div>
-        <div class="dropdown">
-          <div class="links">
-            <a href="index.html">Home</a>
-            <a href="About.html">About</a>
-            <a href="Portfolio.html">Portfolio</a>
-            <a href="Contact.html">Contact</a>
-            <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-          </div>
+          <i class="fa-solid fa-bars hamburg" onclick="toggleSidebar()"></i>
         </div>
       </nav>
+  
+      <div class="sidebar" id="sidebar">
+        <i class="fas fa-times close-btn" id="close-btn"></i>
+        <ul class="navlist list-unstyled">
+          <div class="nav-item"><a class="nav-link" href="index.html">Home</a></div>
+          <div class="nav-item"><a class="nav-link" href="About.html">About</a></div>
+          <div class="nav-item"><a class="nav-link" href="Portfolio.html">Portfolio</a></div>
+          <div class="nav-item"><a class="nav-link" href="Contact.html">Contacts</a></div>
+        </ul>
+      </div>
       <!-----------Contact Icons------------>
         <div class="text" data-aos="zoom-in" data-aos-duration="2000">
           <h2>Contact <span>Me!</span></h2>
@@ -83,7 +67,7 @@
             <ul>
               <li><strong>GitHub:</strong> <a href="https://github.com/PearlJanette ">PearlJanette</a></li>
               <li><strong>Phone:</strong> <a href="tel:09359006256">09359006256</a></li>
-              <li><strong>Email:</strong> <a href="mailto:pearljanettegatacacayan@gmail.com">pearljanettegatacacayan@gmail.com</a></li>
+              <li><strong>Email:</strong> <a class="email" href="mailto:pearljanettegatacacayan@gmail.com">pearljanettegatacacayan@gmail.com</a></li>
             </ul>
           </div>
           
@@ -112,5 +96,6 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="script.js"></script>
+   
   </body>
 </html>
