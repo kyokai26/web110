@@ -123,11 +123,12 @@ section {
 }
 
 .main-container .image {
-  width: 400px;
-  height: 80vh;
-  border-radius: 100%;
+  width: clamp(200px, 30vw, 80vh); /* Fluid width scaling */
+  height: clamp(40vh, 30vw, 80vh); /* Fluid height scaling */
+  border-radius: 50%; /* Ensure the element is circular */
   overflow: hidden;
   box-shadow: 0 0 50px rgb(211, 3, 3);
+  margin: 20px;
 }
 
 .main-container .image img {
@@ -138,6 +139,8 @@ section {
 .main-container .image:hover {
   animation: animate 1.5s ease-in-out infinite;
 }
+
+
 
 @keyframes animate {
   0% {
@@ -178,11 +181,21 @@ section {
   text-shadow: 0 0 10px rgb(211, 3, 3);
 }
 
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .content .typewriter {
+    font-size: clamp(0.8rem, 0.2rem + 3vw, 2rem); /* Adjust values as needed */
+  }
+}
+
+
+
 .content p {
-  font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
+  font-size: clamp(0.4rem, 0.2rem + 2vw, 1rem);
   margin: 10px 0;
 }
 
+/* Social Links */
 .social-links i {
   display: inline-flex;
   justify-content: center;
@@ -199,12 +212,13 @@ section {
 }
 
 .social-links i:hover {
-  scale: 1.3;
+  transform: scale(1.3);
   color: black;
   background-color: rgb(211, 3, 3);
   filter: drop-shadow(0 0 10px rgb(211, 3, 3));
 }
 
+/* Button Styles */
 .content button {
   width: 50%;
   height: 6vh;
@@ -220,7 +234,7 @@ section {
 }
 
 .content button:hover {
-  scale: 1.1;
+  transform: scale(1.1);
   color: rgb(211, 3, 3);
   border: 2px solid rgb(211, 3, 3);
   background-color: transparent;
@@ -228,12 +242,45 @@ section {
   box-shadow: 0 0 40px rgb(211, 3, 3);
 }
 
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .social-links i {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+    margin: 5px 10px;
+  }
+
+  .content button {
+    width: 80%;
+    height: 5vh;
+    margin: 20px;
+    font-size: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-links i {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    margin: 5px 5px;
+  }
+
+  .content button {
+    width: 90%;
+    height: 4.5vh;
+    margin: 15px;
+    font-size: 90%;
+  }
+}
+
 /* ------------ ABOUT  SECTION -------------- */
 
 .About {
   height: 100vh; /* Full viewport height */
   overflow-y: auto; /* Enable vertical scroll */
-  padding: 20px;
+  padding: 0px;
   background-color: black;
   box-sizing: border-box; /* Include padding in height */
 }
@@ -509,6 +556,102 @@ section {
 }
 
 .list a:hover {
-  text-decoration: underline; /* Underline on hover for links */
+  text-decoration: underline; 
   color: rgb(128, 0, 0);
+}
+
+
+ 
+ .breadcrumb-container {
+  display: none;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .breadcrumb-container {
+    display: block;
+  }
+  .nav-container {
+    display: none;
+  }
+  .sidebar {
+    width: 100%;
+  }
+  .home {
+    font-weight: 20;
+  }
+  .email {
+    font-size: 10px;
+  }
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #333;
+  color: #fff;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 999;
+}
+.sidebar.active {
+  transform: translateX(0);
+}
+.sidebar .close-btn {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.sidebar .navlist {
+  margin-top: 50px;
+}
+.sidebar .nav-item {
+  padding: 15px;
+}
+.sidebar .nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.sidebar .nav-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column; /* Stack vertically on small screens */
+    align-items: center;
+    text-align: center; /* Center text content */
+  }
+
+  .image {
+    width: clamp(150px, 25vw, 300px);
+    height: clamp(30vh, 50vw, 60vh);
+    margin: 20px 0; /* Adjust margin to center image */
+  }
+
+  .content {
+    margin: 20px 0; /* Adjust margin to center content */
+  }
+}
+
+@media (max-width: 480px) {
+  .image {
+    width: clamp(100px, 20vw, 200px);
+    height: clamp(20vh, 40vw, 50vh);
+  }
+
+  .content {
+    margin: 15px 0; /* Further adjust margin */
+  }
 }

@@ -19,59 +19,46 @@
     <link rel="shortcut icon" href="image/logo.png" type="image/png" />
 
     <title>Personal Website</title>
+
+   
   </head>
   <body>
     <nav>
+      <div class="breadcrumb-container" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i> Menu
+      </div>
       <div class="nav-container">
         <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
           Pearl <span>Janette</span>
         </div>
         <div class="links">
-          <div
-            class="link"
-            data-aos="fade-up"
-            data-aos-duration="1500"
-            data-aos-delay="100"
-          >
+          <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
             <a href="index.html">Home</a>
           </div>
-          <div
-            class="link"
-            data-aos="fade-up"
-            data-aos-duration="1500"
-            data-aos-delay="200"
-          >
+          <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
             <a href="About.html">About</a>
           </div>
-          <div
-            class="link"
-            data-aos="fade-up"
-            data-aos-duration="1500"
-            data-aos-delay="300"
-          >
+          <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
             <a href="Portfolio.html">Portfolio</a>
           </div>
-          <div
-            class="link"
-            data-aos="fade-up"
-            data-aos-duration="1500"
-            data-aos-delay="500"
-          >
+          <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
             <a href="Contact.html">Contact</a>
           </div>
         </div>
-        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-      </div>
-      <div class="dropdown">
-        <div class="links">
-          <a href="index.html">Home</a>
-          <a href="About.html">About</a>
-          <a href="Portfolio.html">Portfolio</a>
-          <a href="Contact.html">Contact</a>
-          <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-        </div>
+        <i class="fa-solid fa-bars hamburg" onclick="toggleSidebar()"></i>
       </div>
     </nav>
+
+    <div class="sidebar" id="sidebar">
+      <i class="fas fa-times close-btn" id="close-btn"></i>
+      <ul class="navlist list-unstyled">
+        <div class="nav-item"><a class="nav-link" href="index.html">Home</a></div>
+        <div class="nav-item"><a class="nav-link" href="About.html">About</a></div>
+        <div class="nav-item"><a class="nav-link" href="Portfolio.html">Portfolio</a></div>
+        <div class="nav-item"><a class="nav-link" href="Contact.html">Contacts</a></div>
+      </ul>
+    </div>
+
     <section>
       <div class="main-container">
         <div class="image" data-aos="zoom-out" data-aos-duration="3000">
@@ -86,18 +73,19 @@
             Hi I'm <span>Pearl</span>
           </h1>
           <div
-            class="typewriter"
+            class="typewriter home"
             data-aos="fade-right"
             data-aos-duration="1500"
             data-aos-delay="900"
           >
-            I'm your future <span class="typewriter-text"></span
-            ><label for="">|</label>
+            I'm your future <span class="typewriter-text"></span>
+            <label for="">|</label>
           </div>
           <p
             data-aos="flip-down"
             data-aos-duration="1500"
             data-aos-delay="1100"
+            class="text1"
           >
             Bachelor of Science in Information Technology (ongoing) Caraga State
             University - Main Campus, Ampayon, Butuan City
@@ -108,21 +96,21 @@
               data-aos="fade-up"
               data-aos-duration="1500"
               data-aos-delay="1300"
-              ><i class="fa-brands fa-github"></i
+            ><i class="fa-brands fa-github"></i
             ></a>
             <a
               href="#"
               data-aos="fade-up"
               data-aos-duration="1500"
               data-aos-delay="1500"
-              ><i class="fa fa-address-book"></i
+            ><i class="fa fa-address-book"></i
             ></a>
             <a
               href="https://mail.google.com/mail/u/0/#inbox"
               data-aos="fade-up"
               data-aos-duration="1500"
               data-aos-delay="1600"
-              ><i class="fa fa-envelope"></i
+            ><i class="fa fa-envelope"></i
             ></a>
           </div>
           <div
@@ -136,8 +124,11 @@
             </a>
           </div>
         </div>
+        
+        
       </div>
     </section>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init({ offset: 0 });
@@ -147,5 +138,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="script.js"></script>
+    <script src="marde.js" type="module"></script>
+    
   </body>
+
+  <style>
+    
+  </style>
 </html>
